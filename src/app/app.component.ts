@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
-import { FilmSectionComponent } from './features/film-section/film-section.component';
+import { HeaderComponent } from './shared/layout/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HomeComponent, FilmSectionComponent],
+  standalone: true,
+  imports: [RouterOutlet, HomeComponent, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

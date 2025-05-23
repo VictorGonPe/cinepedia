@@ -1,0 +1,17 @@
+.menu {
+    width: 100%;
+    border-block: 1px solid gray;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+a {
+    color: white;
+    padding-inline: 40px;
+    padding-block: 15px;
+    border-color: 2px solid gray;
+}
