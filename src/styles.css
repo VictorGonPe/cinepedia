@@ -5,6 +5,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Neohellenic-bold';
+  src: url('assets/fonts/Neohellenic/GFSNeohellenic-Bold.ttf') format('truetype');
+  font-weight: 400;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'Neohellenic-regular';
+  src: url('assets/fonts/Neohellenic/GFSNeohellenic-Regular.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
 body {
     background-color: rgb(34, 34, 34);
     margin: 0px;
@@ -13,4 +27,12 @@ body {
 
 h1 {
     font-family: PermanentMarker;
+}
+
+h3 {
+    font-family: Neohellenic-bold;
+}
+
+p {
+    font-family: Neohellenic-Regular;
 }
