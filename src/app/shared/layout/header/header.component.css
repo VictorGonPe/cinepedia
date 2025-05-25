@@ -13,5 +13,10 @@ a {
     color: white;
     padding-inline: 40px;
     padding-block: 15px;
-    border-color: 2px solid gray;
+    border-inline: 1px solid gray;
+    text-decoration: none;
+}
+
+.underline{
+    border-bottom: 3px solid rgb(0, 72, 255);
 }

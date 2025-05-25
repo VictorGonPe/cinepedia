@@ -9,4 +9,10 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
 
+  selectLink = 'home';
+
+  selectMenu(link:string) {
+    this.selectLink = link;
+  }
+
 }
