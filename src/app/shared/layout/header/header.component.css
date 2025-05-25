@@ -1,19 +1,15 @@
-header {
-    margin-top: 1rem;
-}
-
 .menu {
-    display: flex;
-    justify-content: center;
     width: 100%;
-    margin-top: 2rem;
     border-block: 1px solid gray;
 }
 
 ul {
     display: flex;
-    padding-left: 0;
+    justify-content: center;
     list-style: none;
+    padding-left: 0px;
+    padding-block: 13px;
+    margin: 0px;
 }
 
 a {

@@ -1,9 +1,7 @@
-<header>
-    <app-logo></app-logo>
-    <div class="menu">
-        <ul>
-            <li><a routerLink="/" (click)="selectMenu('home')" [class.underline]="selectLink === 'home'">HOME</a></li>
-            <li><a routerLink="/films" (click)="selectMenu('films')" [class.underline]="selectLink === 'films'" >FILMS</a></li>
-        </ul>
-    </div>
-</header>
+<app-logo></app-logo>
+<div class="menu">
+    <ul>
+        <li><a routerLink="/" (click)="selectMenu('home')" [class.underline]="selectLink === 'home'">HOME</a></li>
+        <li><a routerLink="/films" (click)="selectMenu('films')" [class.underline]="selectLink === 'films'" >FILMS</a></li>
+    </ul>
+</div>
