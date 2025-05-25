@@ -1,1 +1,6 @@
-<p>film-section works!</p>
+@for (movie of results; track movie.id) {
+  <div>
+    <h3>{{ movie.title }}</h3>
+    <p>{{ movie.vote_average }}</p>
+  </div>
+}
