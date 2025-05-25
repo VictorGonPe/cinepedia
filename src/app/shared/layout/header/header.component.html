@@ -1,6 +1,35 @@
-<div class="menu mt-3">
-    <ul>
-        <li><a routerLink="/">HOME</a></li>
-        <li><a routerLink="/films">FILMS</a></li>
-    </ul>
+<div class="desktop justify-content-between m-3 mb-2">
+  <app-social></app-social>
+  <app-logo></app-logo>
+  <app-login></app-login>
+</div>
+
+<div class="mobile">
+  <app-logo></app-logo>
+  <button class="burger" (click)="toogleMenu()" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</div>
+
+<div class="menu">
+  <ul>
+    <li>
+      <a
+        routerLink="/"
+        (click)="selectMenu('home')"
+        [class.underline]="selectLink === 'home'"
+        >HOME</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/films"
+        (click)="selectMenu('films')"
+        [class.underline]="selectLink === 'films'"
+        >FILMS</a
+      >
+    </li>
+  </ul>
 </div>
