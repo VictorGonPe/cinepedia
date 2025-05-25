@@ -1,6 +1,11 @@
 button {
-    color: white;
-    background-color: transparent;
-    border: none;
-    margin-inline: 1rem;
+  color: white;
+  background-color: transparent;
+  border: none;
+  margin-inline: 1rem;
 }
+
+  button:hover {
+    color: rgb(255, 0, 30);
+    transition: all 0.5s ease;
+  }
