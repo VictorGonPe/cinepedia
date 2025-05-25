@@ -17,4 +17,9 @@ export class FilmService {
   );
 
   movies = computed(() => this._movies().results);
+
+  getCreditsByMovieId(movieId: number) {
+    const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${environment.TMDB_API_KEY}`;
+    return this.http.get<{ cast: any[], crew: any[] }>(url);
+  }
 }
