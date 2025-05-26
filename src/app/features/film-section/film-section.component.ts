@@ -12,5 +12,5 @@ import { FilmService } from '../../core/services/film.service';
 
 export class FilmSectionComponent {
   private filmService = inject(FilmService);
-  movies = this.filmService.movies;
+  dataMovies = this.filmService.rateMovies;
 }

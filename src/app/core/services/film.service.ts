@@ -4,22 +4,21 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { environment } from '../../../../environment';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 
 export class FilmService {
-  private http = inject(HttpClient);
-  private apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${environment.TMDB_API_KEY}`;
+    private http = inject(HttpClient);
+    private apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${environment.TMDB_API_KEY}`;
 
-  private _movies = toSignal(
-    this.http.get<{ results: any[] }>(this.apiUrl),
-    { initialValue: { results: [] } }
-  );
+    private responseSignal = toSignal(
+        this.http.get<{ results: any[] }>(this.apiUrl),
+        { initialValue: { results: [] } }
+    );
+    rateMovies = computed(() => this.responseSignal().results);
 
-  movies = computed(() => this._movies().results);
-
-  getCreditsByMovieId(movieId: number) {
-    const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${environment.TMDB_API_KEY}`;
-    return this.http.get<{ cast: any[], crew: any[] }>(url);
-  }
+    getCreditsByMovieId(movieId: number) {
+        const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${environment.TMDB_API_KEY}`;
+        return this.http.get<{ cast: any[], crew: any[] }>(url);
+    }
 }
