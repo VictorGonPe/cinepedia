@@ -1,6 +1,17 @@
-@for (movie of results; track movie.id) {
-  <div>
-    <h3>{{ movie.title }}</h3>
-    <p>{{ movie.vote_average }}</p>
-  </div>
-}
+<div class="container">
+  <h2>Top-rated movies</h2>
+  
+  @for (movie of dataMovies(); track movie.id) {
+    <div class="card d-flex justify-content-center">
+      <a [routerLink]="['/films', movie.id]">
+        <h3>{{ movie.title }}</h3>
+        <p>{{ movie.vote_average }}</p>
+        <div><img src=""></div>
+        <div>
+          <img [src]="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt="{{ movie.title }}" />
+        </div>
+      </a>
+    </div>
+    
+  }
+</div>

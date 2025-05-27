@@ -1,0 +1,13 @@
+<h2>Reparto</h2>
+@for (actor of cast(); track actor.id) {
+  <div>
+    <strong>{{ actor.name }}</strong> as {{ actor.character }}
+  </div>
+}
+
+<h2>Equipo técnico</h2>
+@for (member of crew(); track member.id) {
+  <div>
+    {{ member.name }} – {{ member.job }}
+  </div>
+}
