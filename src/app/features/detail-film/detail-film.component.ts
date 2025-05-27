@@ -1,14 +1,41 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
 import { FilmService } from '../../core/services/film.service';
+import { ActivatedRoute } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { CommonModule } from '@angular/common';
+import { map, filter, catchError, of, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-detail-film',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './detail-film.component.html',
   styleUrl: './detail-film.component.css'
 })
 
 export class DetailFilmComponent {
+  private route = inject(ActivatedRoute);
   private filmService = inject(FilmService);
-  dataDetail = this.filmService.getCreditsByMovieId; 
+
+  // 1. Extraer el ID como observable
+  movieId$ = this.route.paramMap.pipe(
+    map(params => Number(params.get('id'))),
+    filter(id => !isNaN(id))
+  );
+
+  // 2. Llamar a la API y manejar errores
+  credits$ = this.movieId$.pipe(
+    switchMap(id => this.filmService.getCreditsByMovieId(id)),
+    catchError(() => of({ cast: [], crew: [] }))
+  );
+
+  // 3. Convertir Observable final a Signal
+  credits = toSignal(this.credits$, {
+    initialValue: { cast: [], crew: [] }
+  });
+
+  // 4. Crear signals derivados
+  cast = computed(() => this.credits().cast);
+  crew = computed(() => this.credits().crew);
+
 }
