@@ -1,13 +1,13 @@
 .card {
-  width: 60%;
   margin: auto;
   margin-top: 1rem;
   background-color: rgb(81, 80, 80);
-  color: white;
 }
 
 a {
     padding: 10px;
+    color: white;
+    text-decoration: none;
 }
 
 @media (max-width: 768px) {
