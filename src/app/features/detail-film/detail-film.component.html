@@ -1,13 +1,19 @@
-<h2>Reparto</h2>
-@for (actor of cast(); track actor.id) {
-  <div>
-    <strong>{{ actor.name }}</strong> as {{ actor.character }}
+<div class="main">
+  <div class="container p-5">
+    <h2>Film</h2>
+    <div class="movie-detail d-flex justify-content-center">
+      <div class="text">
+        <h3>{{ movieDetails().title }}</h3>
+        <p>⭐ {{ movieDetails().vote_average }}</p>
+        <p>{{ movieDetails().overview }}</p>
+      </div>
+  
+      <img
+        [src]="'https://image.tmdb.org/t/p/w400' + movieDetails().poster_path"
+        [alt]="movieDetails().title"
+      />
+    </div>
   </div>
-}
+</div>
 
-<h2>Equipo técnico</h2>
-@for (member of crew(); track member.id) {
-  <div>
-    {{ member.name }} – {{ member.job }}
-  </div>
-}
+<app-card-list [cast]="cast()"></app-card-list>
