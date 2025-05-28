@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { map, filter, catchError, of, switchMap } from 'rxjs';
+import { Movie } from '../../core/models/film.model';
 
 @Component({
   selector: 'app-detail-film',
@@ -38,4 +39,29 @@ export class DetailFilmComponent {
   cast = computed(() => this.credits().cast);
   crew = computed(() => this.credits().crew);
 
+
+  //pedir imagen y titulo por el id
+
+  private movieDetails$ = this.movieId$.pipe(
+    switchMap(id => this.filmService.getMovieById(id)),
+    catchError(() =>
+      of({
+        id: 0,
+        title: 'Unknown',
+        poster_path: '',
+        vote_average: 0,
+        overview: ''
+      } satisfies Movie)
+    )
+  );
+
+  movieDetails = toSignal(this.movieDetails$, {
+    initialValue: {
+      id: 0,
+      title: '',
+      poster_path: '',
+      vote_average: 0,
+      overview: ''
+    }
+  });
 }
