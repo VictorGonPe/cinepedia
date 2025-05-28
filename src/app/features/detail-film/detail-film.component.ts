@@ -5,11 +5,12 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { map, filter, catchError, of, switchMap } from 'rxjs';
 import { Movie } from '../../core/models/film.model';
+import { CardListComponent } from '../card-list/card-list.component';
 
 @Component({
   selector: 'app-detail-film',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CardListComponent],
   templateUrl: './detail-film.component.html',
   styleUrl: './detail-film.component.css'
 })
