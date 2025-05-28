@@ -1,0 +1,19 @@
+<div class="main">
+  <div class="container p-5">
+    <h2>Film</h2>
+    <div class="movie-detail d-flex justify-content-center">
+      <div class="text">
+        <h3>{{ movieDetails().title }}</h3>
+        <p>⭐ {{ movieDetails().vote_average }}</p>
+        <p>{{ movieDetails().overview }}</p>
+      </div>
+  
+      <img
+        [src]="'https://image.tmdb.org/t/p/w400' + movieDetails().poster_path"
+        [alt]="movieDetails().title"
+      />
+    </div>
+  </div>
+</div>
+
+<app-card-list [cast]="cast()"></app-card-list>
