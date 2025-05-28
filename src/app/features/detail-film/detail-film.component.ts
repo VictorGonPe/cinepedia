@@ -17,24 +17,24 @@ export class DetailFilmComponent {
   private route = inject(ActivatedRoute);
   private filmService = inject(FilmService);
 
-  // 1. Extraer el ID como observable
+  //Extraer el ID como observable
   movieId$ = this.route.paramMap.pipe(
     map(params => Number(params.get('id'))),
     filter(id => !isNaN(id))
   );
 
-  // 2. Llamar a la API y manejar errores
+  //Llamar a la API y manejar errores
   credits$ = this.movieId$.pipe(
     switchMap(id => this.filmService.getCreditsByMovieId(id)),
     catchError(() => of({ cast: [], crew: [] }))
   );
 
-  // 3. Convertir Observable final a Signal
+  //Convertir Observable final a Signal
   credits = toSignal(this.credits$, {
     initialValue: { cast: [], crew: [] }
   });
 
-  // 4. Crear signals derivados
+  //Crear signals derivados
   cast = computed(() => this.credits().cast);
   crew = computed(() => this.credits().crew);
 
