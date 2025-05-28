@@ -1,0 +1,8 @@
+<div class="container m-5">
+    <h2>Cast</h2>
+    <div class="card-list d-flex flex-wrap justify-content-center">
+        @for (actor of castSignal(); track actor.id) {
+        <app-card [actor]="actor"></app-card>
+        }
+    </div>
+</div>

@@ -1,0 +1,28 @@
+.main {
+    background-color: rgb(45, 45, 45);
+}
+
+.movie-detail {
+    margin: auto;
+    flex-direction: row-reverse;
+}
+
+.text {
+    margin-left: 2rem;
+}
+
+@media (max-width:768px) {
+
+    .text {
+        margin-left: 0px;
+    }
+
+    .container {
+        padding: 2rem !important;
+    }
+
+    .movie-detail {
+        flex-direction: column;
+        width: 90%;
+    }
+}

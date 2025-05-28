@@ -1,0 +1,9 @@
+<div class="card m-3 text-center">
+    <img class="img-fluid"
+        [src]="actor.profile_path ? 'https://image.tmdb.org/t/p/w200' + actor.profile_path : '/assets/img/default.jpg'"
+        [alt]="actor.name" />
+    <div class="mt-3">
+        <strong>{{ actor.name }}</strong>
+        <p>as {{ actor.character }}</p>
+    </div>
+</div>

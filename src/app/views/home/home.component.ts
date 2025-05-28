@@ -5,7 +5,7 @@ import { HeaderComponent } from '../../shared/layout/header/header.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FilmSectionComponent, HeaderComponent],
+  imports: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
