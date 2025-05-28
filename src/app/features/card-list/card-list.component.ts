@@ -1,11 +1,12 @@
 import { Component, computed, inject, Input, signal } from '@angular/core';
 import { CastMember } from '../../core/models/film.model';
 import { CommonModule } from '@angular/common';
+import { CardComponent } from '../../shared/ui/card/card.component';
 
 @Component({
   selector: 'app-card-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CardComponent],
   templateUrl: './card-list.component.html',
   styleUrl: './card-list.component.css'
 })

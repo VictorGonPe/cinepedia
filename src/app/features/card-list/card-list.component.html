@@ -1,11 +1,8 @@
-<div class="card-list">
+<div class="container m-5">
     <h2>Cast</h2>
-    @for (actor of castSignal(); track actor.id) {
-    <div>
-        <img [src]="'https://image.tmdb.org/t/p/w200' + actor.profile_path" alt="{{ actor.character }}" />
+    <div class="card-list d-flex flex-wrap justify-content-center">
+        @for (actor of castSignal(); track actor.id) {
+        <app-card [actor]="actor"></app-card>
+        }
     </div>
-    <div>
-        <strong>{{ actor.name }}</strong> as {{ actor.character }}
-    </div>
-    }
 </div>
