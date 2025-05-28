@@ -29,10 +29,27 @@ h1 {
     font-family: PermanentMarker;
 }
 
-h3 {
+h2 {
     font-family: Neohellenic-bold;
+    font-size: 2rem;
+    border: 1px solid rgb(142, 2, 20);
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.4rem;
 }
 
 p {
     font-family: Neohellenic-Regular;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    margin-inline: auto;
+    width: 90%;
+  }
+  
 }
