@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { CastMember } from '../../../core/models/film.model';
 
 @Component({
   selector: 'app-card',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
 export class CardComponent {
-
+  @Input({ required: true }) actor!: CastMember;
 }
