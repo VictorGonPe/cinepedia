@@ -10,7 +10,24 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+  border: 2px solid rgb(0, 72, 255);
+  border-radius: 8px;
+  padding: 8px;
+  background-color: rgb(152, 152, 152);
+}
+
+a:active {
+  border-color: rgb(255, 0, 33) !important;
+  color: rgb(255, 0, 33);
+}
+
 @media (max-width: 768px) {
+
+  .container {
+    padding: 2rem !important;
+  }
+
   .card {
     width: 90%;
   }
