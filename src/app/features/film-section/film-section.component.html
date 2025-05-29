@@ -1,5 +1,11 @@
 <div class="container p-5">
-  <h2>Top-rated movies</h2>
+  <h2>Movies by popularity</h2>
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+  <button (click)="prevPage()">← Prev</button>
+  <span>Page {{ page() }}</span>
+  <button (click)="nextPage()">Next →</button>
+</div>
   
   @for (movie of dataMovies(); track movie.id) {
     <div class="card d-flex justify-content-center">
