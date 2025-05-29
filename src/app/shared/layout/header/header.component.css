@@ -50,6 +50,10 @@ a {
   text-decoration: none;
 }
 
+a:active {
+  background-color: rgb(40, 40, 40);
+}
+
 @media (max-width: 768px) {
   .desktop {
     display: none;

@@ -4,6 +4,10 @@
   background-color: rgb(81, 80, 80);
 }
 
+img {
+  width: 30px;
+}
+
 a {
   padding: 10px;
   color: white;

@@ -1,14 +1,13 @@
 <div class="container p-5">
-  <h2>Top-rated movies</h2>
-  
-  @for (movie of dataMovies(); track movie.id) {
-    <div class="card d-flex justify-content-center">
+
+  <h2>Popular Movies</h2>
+
+  @for (movie of movies(); track movie.id) {
+    <div class="card">
       <a [routerLink]="['/films', movie.id]">
-        <h3>{{ movie.title }}</h3>
+        <h3><img src="favicon.ico"> {{ movie.title }}</h3>
         <p>⭐ {{ movie.vote_average }}</p>
-        <div><img src=""></div>
       </a>
     </div>
-    
   }
 </div>
