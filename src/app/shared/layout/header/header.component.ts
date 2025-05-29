@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterModule, NavigationEnd } from '@angular/router';
 import { LogoComponent } from "../../ui/logo/logo.component";
 import { SocialComponent } from "../../ui/social/social.component";
 import { LoginComponent } from "../../ui/login/login.component";
+import { filter } from 'rxjs';
+
 
 @Component({
   selector: 'app-header',
@@ -12,17 +14,32 @@ import { LoginComponent } from "../../ui/login/login.component";
 })
 export class HeaderComponent {
 
-  selectLink = 'home';
+  private router = inject(Router);
 
-  selectMenu(link:string) {
-    this.selectLink = link;
+  selectLink = 'home';
+  isMenuOpen: boolean = false;
+
+  constructor() {
+    // Suscribirse a cambios de navegación
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        const url = event.urlAfterRedirects;
+
+        if (url === '/' || url === '') {
+          this.selectLink = 'home';
+        } else if (url.startsWith('/films')) {
+          this.selectLink = 'films';
+        }
+      });
   }
 
-  isMenuOpen:boolean = false;
+
+  selectMenu(link: string) {
+    this.selectLink = link;
+  }
 
   toogleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
-
-
 }
