@@ -5,8 +5,8 @@
   @for (movie of movies(); track movie.id) {
     <div class="card">
       <a [routerLink]="['/films', movie.id]">
-        <h3>⭐ {{ movie.title }}</h3>
-        <p>Average: {{ movie.vote_average }}</p>
+        <h3><img src="favicon.ico"> {{ movie.title }}</h3>
+        <p>⭐ {{ movie.vote_average }}</p>
       </a>
     </div>
   }
