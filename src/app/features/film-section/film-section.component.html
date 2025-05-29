@@ -1,20 +1,13 @@
 <div class="container p-5">
-  <h2>Movies by popularity</h2>
 
-  <div class="d-flex justify-content-between align-items-center mb-3">
-  <button (click)="prevPage()">← Prev</button>
-  <span>Page {{ page() }}</span>
-  <button (click)="nextPage()">Next →</button>
-</div>
-  
-  @for (movie of dataMovies(); track movie.id) {
-    <div class="card d-flex justify-content-center">
+  <h2>Popular Movies</h2>
+
+  @for (movie of movies(); track movie.id) {
+    <div class="card">
       <a [routerLink]="['/films', movie.id]">
-        <h3>{{ movie.title }}</h3>
-        <p>⭐ {{ movie.vote_average }}</p>
-        <div><img src=""></div>
+        <h3>⭐ {{ movie.title }}</h3>
+        <p>Average: {{ movie.vote_average }}</p>
       </a>
     </div>
-    
   }
 </div>

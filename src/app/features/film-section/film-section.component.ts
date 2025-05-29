@@ -1,8 +1,7 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, inject, signal, HostListener } from '@angular/core';
 import { FilmService } from '../../core/services/film.service';
 import { RouterModule } from '@angular/router';
-import { toSignal, toObservable } from '@angular/core/rxjs-interop';
-import { switchMap } from 'rxjs';
+import { Movie } from '../../core/models/film.model'; 
 
 @Component({
   selector: 'app-film-section',
@@ -14,26 +13,35 @@ import { switchMap } from 'rxjs';
 export class FilmSectionComponent {
   private filmService = inject(FilmService);
 
-  page = signal(1);
+  movies = signal<Movie[]>([]); 
+  currentPage = signal(1);
+  isLoading = false;
 
-  private page$ = toObservable(this.page);
-
-  private allMovies$ = this.page$.pipe(
-    switchMap((page: number) => this.filmService.getMoviesByPage(page))
-  );
-
-
-  allMovies = toSignal(this.allMovies$, {
-    initialValue: { results: [] }
-  });
-
-  dataMovies = computed(() => this.allMovies().results);
-
-  nextPage() {
-    this.page.update(p => p + 1);
+  constructor() {
+    this.loadNextPage(); 
   }
 
-  prevPage() {
-    this.page.update(p => (p > 1 ? p - 1 : 1));
+  loadNextPage() {
+    if (this.isLoading) return;
+    this.isLoading = true;
+
+    const page = this.currentPage();
+    this.filmService.getMoviesByPage(page).subscribe(response => {
+      this.movies.update(m => [...m, ...response.results]);
+      this.currentPage.update(p => p + 1);
+      this.isLoading = false;
+    });
+  }
+
+  
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    if (scrollTop + windowHeight >= documentHeight * 0.8) {
+      this.loadNextPage();
+    }
   }
 }
