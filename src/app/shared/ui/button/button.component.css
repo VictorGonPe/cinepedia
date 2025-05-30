@@ -5,7 +5,16 @@ button {
   margin-inline: 1rem;
 }
 
-  button:hover {
-    color: rgb(255, 0, 30);
-    transition: all 0.5s ease;
-  }
+button:hover {
+  color: rgb(255, 0, 30);
+  transition: all 0.5s ease;
+}
+
+.button-border {
+  padding: 10px 35px;
+  border: 1px solid white;
+}
+
+.button-border:hover {
+  border-color: rgb(255, 0, 30);
+}
