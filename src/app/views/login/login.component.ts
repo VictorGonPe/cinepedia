@@ -23,7 +23,14 @@ export class LoginComponent {
 
   onLogin() {
     this.auth.login(this.email, this.password)
-      .then(() => console.log('Logeado!'))
-      .catch(err => this.error.set(err.message));
+      .then(() => window.location.href = '')
+      .catch(err => {
+        if (err.code === 'auth/invalid-credential') {
+          this.error.set('⚠️ Incorrect email or password');
+        } else {
+          this.error.set(err.message); 
+        }
+      });
   }
+
 }

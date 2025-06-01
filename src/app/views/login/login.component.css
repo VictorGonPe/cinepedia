@@ -33,10 +33,17 @@ input {
   border-radius: 5px;
 }
 
+button {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+}
+
 @media (max-width: 768px) {
   .container-log {
     width: 90vw;
-    height: 120vh;
+    padding-top: 2rem;
+    height: auto;
     margin: 0px auto;
   }
 }
