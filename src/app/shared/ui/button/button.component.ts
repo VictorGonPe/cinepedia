@@ -10,4 +10,5 @@ import { Component, Input } from '@angular/core';
 export class ButtonComponent {
   @Input() textBtn!: string;
   @Input() className!: string;
+  @Input() type: 'button' | 'submit' | 'reset' = 'button';
 }

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Router, RouterModule, NavigationEnd } from '@angular/router';
 import { LogoComponent } from "../../ui/logo/logo.component";
 import { SocialComponent } from "../../ui/social/social.component";
-import { LoginComponent } from "../../ui/login/login.component";
+import { LoginComponent } from "../../ui/login-buttons/login-buttons.component";
 import { filter } from 'rxjs';
 
 
@@ -20,7 +20,7 @@ export class HeaderComponent {
   isMenuOpen: boolean = false;
 
   constructor() {
-    // Suscribirse a cambios de navegación
+
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
