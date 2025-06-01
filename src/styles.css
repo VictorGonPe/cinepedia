@@ -44,6 +44,7 @@ h3 {
 
 p {
     font-family: Neohellenic-Regular;
+    font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
@@ -51,4 +52,8 @@ p {
     margin-inline: auto;
   }
   
+}
+
+a {
+  font-family: Neohellenic-bold;
 }

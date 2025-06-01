@@ -13,22 +13,38 @@ button:hover {
 .button-border {
   border-radius: 15px;
   padding: 10px 35px;
-  border: 2px solid transparent;
-  box-shadow:
-    0 0 5px rgb(0, 72, 255),
-    0 0 10px rgb(0, 72, 255),
-    0 0 20px rgb(0, 72, 255),
-    0 0 40px rgb(0, 72, 255);
+  color: rgb(250, 223, 75);
+  box-shadow: 0 0 5px rgb(250, 223, 75), 0 0 10px rgb(250, 223, 75),
+    0 0 20px rgb(250, 223, 75), 0 0 40px rgb(250, 223, 75);
   transition: 0.3s ease;
 }
 
 .button-border:hover {
-  color: white;
-  border: 2px solid rgb(65, 141, 255);
-  box-shadow:
-    0 0 10px rgb(0, 72, 255),
-    0 0 20px rgb(0, 72, 255),
-    0 0 40px rgb(0, 72, 255),
-    0 0 80px rgb(0, 72, 255);
+  color: rgb(250, 223, 75);
+  box-shadow: 0 0 10px rgb(250, 223, 75), 0 0 20px rgb(250, 223, 75),
+    0 0 40px rgb(250, 223, 75), 0 0 80px rgb(250, 223, 75);
   transform: scale(1.05);
+}
+
+.button-login {
+  color: black;
+  width: 100%;
+  font-weight: 700;
+  background-color: rgb(250, 223, 75);
+  border-radius: 25px;
+  padding: 10px 100px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.button-login:active {
+  background-color: rgb(122, 104, 0);
+}
+
+
+@media (max-width:768px) {
+  .button-login {
+    padding-inline: 50px;
+    margin-bottom: 10px;
+  }
 }
