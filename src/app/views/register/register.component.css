@@ -9,6 +9,11 @@
   border-radius: 30px;
 }
 
+button {
+    background-color: white;
+    border: 1px solid rgb(250, 223, 75);
+}
+
 a {
   text-decoration: none;
   color: rgb(91, 91, 91);
