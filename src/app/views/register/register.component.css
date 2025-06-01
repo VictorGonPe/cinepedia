@@ -1,0 +1,42 @@
+.container-log {
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  height: 100vh;
+}
+
+.card {
+  border-radius: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(91, 91, 91);
+}
+
+h2 {
+    margin-bottom: 1rem;
+  border: none;
+}
+
+form {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  width: 80%;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  margin-block: 10px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .container-log {
+    width: 90vw;
+    height: 120vh;
+    margin: 0px auto;
+  }
+}

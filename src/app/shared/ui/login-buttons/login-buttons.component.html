@@ -1,4 +1,8 @@
 <div class="login d-flex justify-content-end">
-    <app-button [textBtn]="'LOG IN'" [routerLink]="'/login'" ></app-button>
-    <app-button [textBtn]="'REGISTER'" [routerLink]="'/register'" ></app-button>
+  @if (!isLoggedIn()) {
+    <app-button [textBtn]="'LOG IN'" [routerLink]="'/login'"></app-button>
+    <app-button [textBtn]="'REGISTER'" [routerLink]="'/register'"></app-button>
+  } @else {
+    <app-button [textBtn]="'LOG OUT'" (click)="logout()"></app-button>
+  }
 </div>
