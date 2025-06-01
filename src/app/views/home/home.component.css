@@ -1,0 +1,11 @@
+.container {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 100;
+}
