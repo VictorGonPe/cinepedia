@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './shared/layout/header/header.component';
+import { Component, computed, inject, signal } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { HeaderComponent } from './shared/layout/header/header.component'
 
 @Component({
   selector: 'app-root',

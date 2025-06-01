@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login-buttons',
   standalone: true,
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, RouterModule],
   templateUrl: './login-buttons.component.html',
   styleUrl: './login-buttons.component.css'
 })
