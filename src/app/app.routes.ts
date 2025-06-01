@@ -5,6 +5,7 @@ import { DetailFilmComponent } from './features/detail-film/detail-film.componen
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { LayoutComponent } from './views/layout/layout.component';
+import { authGuard } from './core/guards/auth.guard';
 
 
 export const routes: Routes = [
@@ -13,10 +14,10 @@ export const routes: Routes = [
         children: [
             { path: '', component: HomeComponent },
             { path: 'films', component: FilmsComponent },
-            { path: 'films/:id', component: DetailFilmComponent },
+            { path: 'films/:id', component: DetailFilmComponent, canActivate: [authGuard] },
         ]
     },
-    
+
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: '**', redirectTo: 'login' }
