@@ -1,0 +1,29 @@
+
+<div class="container-log d-flex justify-content-center">
+    <app-logo></app-logo>
+  <div class="card mt-3 p-5 h-50">
+    <div class="close-btn d-flex justify-content-end" [routerLink]="''" ><button>X</button></div>
+    <h2>Register</h2>
+    <p class="d-flex mb-0 justify-content-center">Enter your email and password to continue.</p>
+    <form (ngSubmit)="onSubmit()">
+      <input
+        [(ngModel)]="email"
+        name="email"
+        type="email"
+        placeholder="Email"
+        required
+      />
+      <input
+        [(ngModel)]="password"
+        name="password"
+        type="password"
+        placeholder="Contraseña"
+        required
+      />
+      <div class="w-100 d-flex justify-content-end">
+          <app-button [className]="'button-login'" type="submit" [textBtn]="'Register'"></app-button>
+      </div>
+    </form>
+  </div>
+  <p *ngIf="error()">{{ error()}}</p>
+</div>
