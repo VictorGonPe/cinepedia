@@ -6,6 +6,10 @@ export interface Movie {
     overview: string;
 }
 
+export interface MovieCastCredit extends Movie {
+    character: string;
+}
+
 export interface CastMember {
     id: number;
     name: string;
