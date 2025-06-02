@@ -1,8 +1,9 @@
-import { Component, computed, effect, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { FilmService } from '../../core/services/film.service';
-import { Movie } from '../../core/models/film.model';
+import { MovieCastCredit } from '../../core/models/film.model';
 import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { catchError, filter, of, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-films-by-id',
@@ -12,19 +13,18 @@ import { toSignal } from '@angular/core/rxjs-interop';
 })
 export class FilmsByIdComponent {
   private route = inject(ActivatedRoute);
-  private fims = inject(FilmService);
+  private filmService = inject(FilmService);
 
-  private paramMap = toSignal(this.route.paramMap, {initialValue: this.route.snapshot.paramMap});
+  private paramMap = toSignal(this.route.paramMap, { initialValue: this.route.snapshot.paramMap });
 
-  actorID = computed(() => Number(this.paramMap().get('id')|| NaN));
+  actorID = computed(() => Number(this.paramMap().get('id') || NaN));
+  films = signal<MovieCastCredit[]>([]);
 
-  films = signal
-
-  constructor() {
-    effect(() => {
-
-    })
-  }
-
+  actorMovies = toSignal(
+    this.filmService.getMovieByPerson(this.actorID()).pipe(
+      catchError(() => of([]))
+    ),
+    { initialValue: [] }
+  );
 
 }
