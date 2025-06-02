@@ -1,4 +1,4 @@
-import { Component, computed, inject, Input, signal } from '@angular/core';
+import { Component, computed, Input, signal } from '@angular/core';
 import { CastMember } from '../../core/models/film.model';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../../shared/ui/card/card.component';

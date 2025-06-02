@@ -2,7 +2,7 @@
   flex-direction: column;
   width: 50%;
   margin: auto;
-  height: 100vh;
+  height: auto;
 }
 
 .card {
@@ -10,8 +10,8 @@
 }
 
 button {
-    background-color: white;
-    border: 1px solid rgb(250, 223, 75);
+  background-color: white;
+  border: 1px solid rgb(250, 223, 75);
 }
 
 a {
@@ -20,7 +20,7 @@ a {
 }
 
 h2 {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
   border: none;
 }
 
@@ -41,7 +41,7 @@ input {
 @media (max-width: 768px) {
   .container-log {
     width: 90vw;
-    height: 120vh;
     margin: 0px auto;
+    margin-top: 1rem;
   }
 }
