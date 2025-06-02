@@ -2,7 +2,7 @@
   flex-direction: column;
   width: 50%;
   margin: auto;
-  height: 100vh;
+  height: auto;
 }
 
 .card {
@@ -42,8 +42,7 @@ button {
 @media (max-width: 768px) {
   .container-log {
     width: 90vw;
-    padding-top: 2rem;
-    height: auto;
     margin: 0px auto;
+    margin-top: 1rem;
   }
 }
