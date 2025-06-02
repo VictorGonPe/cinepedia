@@ -1,13 +1,21 @@
-<h2>{{ actorName() }} Movies</h2>
-<div class="d-flex flex-wrap justify-content-center">
-  @for (movie of actorMovies(); track movie.id) {
-  <div class="card m-3 p-3">
-    <img
-      [src]="'https://image.tmdb.org/t/p/w300' + movie.poster_path"
-      [alt]="movie.title"
-    />
-    <h4>{{ movie.title }}</h4>
-    <p class="text-muted">Personaje: {{ movie.character }}</p>
+<div class="container p-5">
+  <h2>{{ actorName() }} Movies</h2>
+  <div class="d-flex flex-wrap justify-content-center">
+    @for (movie of actorMovies(); track movie.id) {
+    <a [routerLink]="['/films', movie.id]" class="text-decoration-none text-dark">
+        <div class="card m-3 p-3">
+          <img
+            [src]="
+              movie.poster_path
+                ? 'https://image.tmdb.org/t/p/w300' + movie.poster_path
+                : 'assets/img/default.jpg'
+            "
+            [alt]="movie.title"
+          />
+          <h4>{{ movie.title }}</h4>
+          <p class="text-muted">Personaje: {{ movie.character }}</p>
+        </div>
+    </a>
+    }
   </div>
-  }
 </div>
