@@ -1,14 +1,14 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { FilmService } from '../../core/services/film.service';
 import { MovieCastCredit } from '../../core/models/film.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { catchError, filter, of, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-films-by-id',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './films-by-id.component.html',
   styleUrl: './films-by-id.component.css'
 })

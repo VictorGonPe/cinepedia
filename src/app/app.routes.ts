@@ -15,9 +15,8 @@ export const routes: Routes = [
         children: [
             { path: '', component: HomeComponent },
             { path: 'films', component: FilmsComponent },
-            // { path: 'films/:id', component: DetailFilmComponent, canActivate: [authGuard] },
-            { path: 'films/:id', component: DetailFilmComponent },
-            { path: 'actor/:id', component: FilmsByIdComponent }
+            { path: 'films/:id', component: DetailFilmComponent, canActivate: [authGuard] },
+            { path: 'actor/:id', component: FilmsByIdComponent, canActivate: [authGuard] }
         ]
     },
 
