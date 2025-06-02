@@ -1,7 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environment';
-import { Movie, Credits } from '../models/film.model';
+import { Movie, Credits, MovieCastCredit } from '../models/film.model';
+import { map } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 
@@ -25,6 +26,8 @@ export class FilmService {
 
     getMovieByPerson(personId:number) {
         const url = `https://api.themoviedb.org/3/person/${personId}/movie_credits?api_key=${environment.TMDB_API_KEY}`;
-        return this.http.get<Movie>(url);
+        return this.http
+        .get<{ cast: MovieCastCredit[] }>(url)
+        .pipe(map(resp => resp.cast));
     }
 }
