@@ -1,10 +1,10 @@
 <div class="container-list d-flex">
-    <div class="container p-5">
-        <h2>Cast</h2>
-        <div class="card-list d-flex flex-wrap justify-content-center">
-            @for (actor of castSignal(); track actor.id) {
-            <app-card [actor]="actor"></app-card>
-            }
-        </div>
+  <div class="container p-5">
+    <h2>Cast</h2>
+    <div class="card-list d-flex flex-wrap justify-content-center">
+      @for (actor of castSignal(); track actor.id) {
+      <app-card [actor]="actor"></app-card>
+      }
     </div>
+  </div>
 </div>

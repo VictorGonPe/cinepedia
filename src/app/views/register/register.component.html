@@ -1,11 +1,11 @@
 
-<div class="container-log d-flex justify-content-center">
+<div class="container-log mt-5 d-flex justify-content-center">
     <app-logo></app-logo>
   <div class="card mt-3 p-5 h-50">
     <div class="close-btn d-flex justify-content-end" [routerLink]="''" ><button>X</button></div>
     <h2>Register</h2>
     <p class="d-flex mb-0 justify-content-center">Enter your email and password to continue.</p>
-    <form (ngSubmit)="onSubmit()">
+    <form class="mb-5" (ngSubmit)="onSubmit()">
       <input
         [(ngModel)]="email"
         name="email"
@@ -20,7 +20,7 @@
         placeholder="Contraseña"
         required
       />
-      <div class="w-100 d-flex justify-content-end">
+      <div class="w-100 d-flex justify-content-center">
           <app-button [className]="'button-login'" type="submit" [textBtn]="'Register'"></app-button>
       </div>
     </form>
