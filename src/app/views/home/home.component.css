@@ -9,3 +9,25 @@
   cursor: pointer;
   z-index: 100;
 }
+
+.video-container {
+  margin-top: 6rem;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -10;
+  overflow: hidden;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    margin-top: 2rem;
+  }
+}
