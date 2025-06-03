@@ -1,8 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeaderComponent } from './header.component';
 import { provideRouter } from '@angular/router';
-import { RouterTestingHarness } from '@angular/router/testing';
-import { Location } from '@angular/common';
+import { AuthService } from '../../../core/services/auth.service';
+import { signal } from '@angular/core';
+
+
+class MockAuthService {
+  user = signal({ name: 'Fake User', email: 'fake@example.com' });
+  logout = () => {};
+}
 
 describe('HeaderComponent', () => {
   let fixture: ComponentFixture<HeaderComponent>;
@@ -11,7 +17,10 @@ describe('HeaderComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HeaderComponent],
-      providers: [provideRouter([])],
+      providers: [
+        provideRouter([]),
+        { provide: AuthService, useClass: MockAuthService }
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HeaderComponent);
@@ -23,11 +32,13 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render two menu links', () => {
-    const links = fixture.nativeElement.querySelectorAll('ul li a');
-    expect(links.length).toBe(2);
-    expect(links[0].textContent.trim()).toBe('HOME');
-    expect(links[1].textContent.trim()).toBe('FILMS');
+  it('should include HOME and FILMS menu links', () => {
+    const links = Array.from(
+      fixture.nativeElement.querySelectorAll('ul li a')
+    ).map((el: any) => el.textContent.trim());
+
+    expect(links).toContain('HOME');
+    expect(links).toContain('FILMS');
   });
 
   it('should toggle the mobile menu', () => {
