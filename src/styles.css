@@ -32,10 +32,11 @@ h1 {
 h2 {
     font-family: Neohellenic-bold;
     font-size: 2rem;
-    border: 1px solid rgb(142, 2, 20);
+    box-shadow: 2px 1px 2px 2px rgb(142, 2, 20);
     border-radius: 8px;
     text-align: center;
     margin-bottom: 2rem;
+    padding: 0.5rem;
 }
 
 h3 {

@@ -19,13 +19,29 @@ describe('SocialComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render 4 social links', () => {
-    const links = fixture.nativeElement.querySelectorAll('a');
-    expect(links.length).toBe(4);
-  });
-
   it('should contain Facebook link', () => {
     const link = fixture.nativeElement.querySelector('a[href="https://facebook.com/angular"]');
     expect(link).toBeTruthy();
+    expect(link.getAttribute('aria-label')).toBe('Facebook');
+  });
+
+  it('should contain Instagram link', () => {
+    const link = fixture.nativeElement.querySelector('a[href="https://instagram.com/angular"]');
+    expect(link).toBeTruthy();
+    expect(link.getAttribute('aria-label')).toBe('Instagram');
+  });
+
+  it('should contain Twitter link', () => {
+    const link = fixture.nativeElement.querySelector('a[href="https://twitter.com/angular"]');
+    expect(link).toBeTruthy();
+    expect(link.getAttribute('aria-label')).toBe('Twitter');
+  });
+
+  it('should contain YouTube link', () => {
+    const link = fixture.nativeElement.querySelector(
+      'a[href="https://www.youtube.com/channel/UCbn1OgGei-DV7aSRo_HaAiw"]'
+    );
+    expect(link).toBeTruthy();
+    expect(link.getAttribute('aria-label')).toBe('Youtube');
   });
 });
