@@ -2,10 +2,12 @@
   margin: auto;
   margin-top: 1rem;
   background-color: rgb(81, 80, 80);
+  display: flex;
+
 }
 
 img {
-  width: 30px;
+  width: 60px;
 }
 
 a {

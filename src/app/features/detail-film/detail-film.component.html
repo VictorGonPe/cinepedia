@@ -7,10 +7,10 @@
         <p>⭐ {{ movieDetails().vote_average }}</p>
         <p>{{ movieDetails().overview }}</p>
       </div>
-  
+
       <img [src]=" 
         movieDetails().poster_path 
-        ?'https://image.tmdb.org/t/p/w400' + movieDetails().poster_path
+        ?'https://image.tmdb.org/t/p/w300' + movieDetails().poster_path
         :'assets/img/default.jpg'
         " [alt]="movieDetails().title" />
     </div>
