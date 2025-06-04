@@ -1,40 +1,63 @@
 # Cinepedia
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.
+![Preview](src/assets/img/cinepedia-preview.png "Cinepedia")
 
-## Development server
+## Project Description
 
-To start a local development server, run:
+**Cinepedia** is a responsive and interactive single-page application built with Angular 17+ using **Standalone Components** and **Bootstrap**. The app allows users to explore detailed movie information and view credits using The Movie Database (TMDb) API.
+
+The architecture is modular and scalable, and the UI is powered by **Angular Signals** for a fully reactive experience. The project is also covered by **unit tests** using **Karma** and **Jasmine**, ensuring reliability and maintainability.
+
+## Technologies and Tools Used
+
+- **Angular 17+ with Standalone Components**
+- **TypeScript**
+- **CSS and Bootstrap** (custom styles and responsive design)
+- **Angular Signals & Computed**
+- **Unit Testing** with **Karma + Jasmine**
+- **VS Code** as the main development environment
+
+## Requirements
+
+- **Modern browser**: Chrome, Firefox, Safari, Edge
+- **Node.js**: version 18.x or higher recommended
+- **Angular CLI**: globally installed (`npm install -g @angular/cli`)
+
+## Developer Prerequisites
+
+To contribute or run this project, you should have:
+
+- Solid understanding of Angular concepts: components, routing, services, signals
+- Experience with TypeScript and modular CSS
+- Familiarity with the Angular CLI and Git
+
+## Getting Started
+
+### 1. Clone the repository
 
 ```bash
-ng serve
+git clone https://github.com/VictorGonPe/cinepedia.git
+cd cinepedia
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 2. Install Angular CLI
 
 ```bash
-ng generate component component-name
+npm install -g @angular/cli
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 3. Install Project dependencies
 
 ```bash
-ng generate --help
+npm install
 ```
 
-## Building
-
-To build the project run:
+### 4. Start the development server
 
 ```bash
-ng build
+ng serve -o
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
 ## Running unit tests
 
@@ -44,16 +67,4 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ng test
 ```
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
