@@ -61,10 +61,21 @@ a:active {
 
 .menuBurger {
   flex-direction: column;
-  background-color: gray;
+  background-color: rgb(108, 108, 108);
   align-items: center;
   margin: auto;
+  padding-block: 10px;
 }
+
+.login {
+  padding-bottom: 4px;
+  border-bottom: 1px solid white;
+}
+
+.social {
+  padding-top: 5px;
+}
+
 
 
 @media (max-width: 768px) {
@@ -79,4 +90,8 @@ a:active {
     padding: 1rem;
   }
 
+  .svg {
+    transition: transform 0.8s ease;
+    transform: rotate(180deg);
+  }
 }

@@ -8,9 +8,11 @@
   <div class="mobile">
     <app-logo></app-logo>
     <button class="burger" (click)="toogleMenu()" aria-label="Abrir menú">
-      <span></span>
-      <span></span>
-      <span></span>
+      @if (!isMenuOpen) {
+      <img src="assets/img/down-arrow.svg" alt="down-arrow" width="35" height="35">
+      } @else {
+      <img class="svg" src="assets/img/down-arrow.svg" alt="down-arrow" width="35" height="35">
+      }
     </button>
   </div>
 
@@ -28,7 +30,11 @@
 
 @if (isMenuOpen) {
 <div class="menuBurger d-flex justify-content-center">
-  <app-login-buttons></app-login-buttons>
-  <app-social></app-social>
+  <div class="login">
+    <app-login-buttons></app-login-buttons>
+  </div>
+  <div class="social">
+    <app-social></app-social>
+  </div>
 </div>
 }
