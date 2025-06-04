@@ -59,6 +59,14 @@ a:active {
   background-color: rgb(40, 40, 40);
 }
 
+.menuBurger {
+  flex-direction: column;
+  background-color: gray;
+  align-items: center;
+  margin: auto;
+}
+
+
 @media (max-width: 768px) {
   .desktop {
     display: none;
@@ -70,4 +78,5 @@ a:active {
     align-items: center;
     padding: 1rem;
   }
+
 }
