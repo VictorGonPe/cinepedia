@@ -59,6 +59,25 @@ a:active {
   background-color: rgb(40, 40, 40);
 }
 
+.menuBurger {
+  flex-direction: column;
+  background-color: rgb(108, 108, 108);
+  align-items: center;
+  margin: auto;
+  padding-block: 10px;
+}
+
+.login {
+  padding-bottom: 4px;
+  border-bottom: 1px solid white;
+}
+
+.social {
+  padding-top: 5px;
+}
+
+
+
 @media (max-width: 768px) {
   .desktop {
     display: none;
@@ -69,5 +88,10 @@ a:active {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+  }
+
+  .svg {
+    transition: transform 0.8s ease;
+    transform: rotate(180deg);
   }
 }
