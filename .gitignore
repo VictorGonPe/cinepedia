@@ -43,3 +43,6 @@ Thumbs.db
 
 #private keys
 environment.ts
+environment.prod.ts
+environment*.ts
+
