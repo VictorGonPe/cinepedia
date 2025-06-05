@@ -31,6 +31,37 @@ To contribute or run this project, you should have:
 - Experience with TypeScript and modular CSS
 - Familiarity with the Angular CLI and Git
 
+## ⚙️ Environment Configuration
+
+This project uses multiple environment files to separate development, production, and private local configurations.
+
+### Environment Files
+
+| File                                     | Committed to repo? | Purpose                               |
+|------------------------------------------|---------------------|----------------------------------------|
+| `src/environments/environment.ts`        | ✅ Yes              | Default development (`ng serve`)       |
+| `src/environments/environment.prod.ts`   | ❌ No               | Automatically generated on Vercel      |
+| `src/environments/environment.local.ts`  | ❌ No               | Used only locally with real credentials |
+
+### 🧩 Setup after cloning
+
+After cloning the repository, create a file named `src/environments/environment.ts` with the following structure:
+
+```ts
+export const environment = {
+  production: false,
+  TMDB_API_KEY: '',
+  firebaseConfig: {
+    apiKey: '',
+    authDomain: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '',
+    appId: ''
+  }
+};
+
+
 ## Getting Started
 
 ### 1. Clone the repository
