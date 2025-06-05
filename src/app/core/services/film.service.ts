@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment.local';
+import { environment } from '../../../environments/environment';
 import { Movie, Credits, MovieCastCredit } from '../models/film.model';
 import { map } from 'rxjs';
 
