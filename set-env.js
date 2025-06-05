@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs';
+const fs = require('fs');
 
 const targetPath = './src/environments/environment.prod.ts';
 
@@ -17,4 +17,4 @@ export const environment = {
 };
 `;
 
-writeFileSync(targetPath, envConfigFile);
+fs.writeFileSync(targetPath, envConfigFile);
